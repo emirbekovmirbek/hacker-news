@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Layout } from 'antd'
+import HeaderComponent from './components/header/Header'
+import AppRouters from './components/router/AppRouters'
 
-function App() {
+const {Content, Footer } = Layout;
+
+const App: React.FC = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <HeaderComponent/>
+      <Content className="site-layout" style={{ padding: '0 50px' }}>
+        <AppRouters/>
+      </Content>
+      <Footer style={{ textAlign: 'center' }}>API Hacker News. ©2023 Created by API Hacker News.</Footer>
+    </Layout>
   );
-}
+};
 
-export default App;
+export default App
